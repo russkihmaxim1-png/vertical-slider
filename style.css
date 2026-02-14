@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+}
+
+.slider-container{
+    position: relative; /*kaum beweglich*/
+    overflow: hidden;
+    width: 100vw;
+    height: 100vw;
+}
+
+.left-slide{
+    height: 100%;
+    width: 35%;
+    position: absolute; /*absolut freibeweglich*/
+    top: 0;
+    left: 0;
+}
+
+.left-slide > div{
+    height: 100%;
+    width: 100%;
+    display: flex; /*aktieviert flexbox(gibt mogichkeit Elemente in einem Container einzuordnen, ohne komplieziert Berechnung) auf display(container)*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+}
+
+.left-slide h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+}
+ 
+.right-slide > div{  /*das wählt alle div elemente aus klasse aus*/
+    background-repeat: no-repeat;/*wird nur einmal angezeigt*/
+    background-size: cover; /*cover füllt das Bild auf gesamten Container*/
+    background-position: center center; /* center(hight) center(width)*/
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+
+button:hover{
+    color: #222; /*andert farbe wenn du maus auf button bewegst*/
+
+}
+button:focus{
+    outline: none;/*jetzt ist das unfokusierbar*/
+}
+
+
+.slider-container .action-buttons button{
+    position: absolute; /*Man kann den Teil jetzt absolut frei bewegen*/
+    left: 35%;
+    top: 50%; /*hier positioniere ich buttons*/
+    z-index: 100; /*uperlappung von Ebenen(0 ist hinter und je größer eine Ziffer, desto stärker Uberlappung wird)*/
+}
+.slider-container .action-buttons .down-button {
+  transform: translateX(-100%); /*positioniert buttoms auf X-Achse(100% ist breite eines buttoms(der schebst sich nach links um 100% seiner eigenne Breite))*/
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px; /*das rundet nur die ecken oben rechts*/
+  border-bottom-right-radius: 5px; /*das rundet nur die ecken unten rechts*/
+} 
