@@ -15,7 +15,7 @@ body {
     position: relative; /*kaum beweglich*/
     overflow: hidden;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
 }
 
 .left-slide{
@@ -24,6 +24,7 @@ body {
     position: absolute; /*absolut freibeweglich*/
     top: 0;
     left: 0;
+    transition: transform 0.5s ease-in-out ;
 }
 
 .left-slide > div{
@@ -47,6 +48,7 @@ body {
     top: 0;
     left: 35%;
     width: 65%;
+    transition: transform 0.5s ease-in-out;
 }
  
 .right-slide > div{  /*das wählt alle div elemente aus klasse aus*/
@@ -55,6 +57,7 @@ body {
     background-position: center center; /* center(hight) center(width)*/
     height: 100%;
     width: 100%;
+    
 }
 
 button{
